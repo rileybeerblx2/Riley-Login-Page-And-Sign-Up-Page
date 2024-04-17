@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@
             box-sizing: border-box;
         }
 
-        input[type="submit"] {
+        input[type="submit"], #signupButton {
             width: 100%;
             background-color: #4CAF50;
             color: white;
@@ -38,7 +38,7 @@
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, #signupButton:hover {
             background-color: #45a049;
         }
     </style>
@@ -46,14 +46,23 @@
 
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
-        <!-- Signup form implementation will go here -->
-        <input type="submit" value="Sign Up" onclick="redirectToLogin()">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <input type="submit" value="Login">
+
+            <button id="signupButton" onclick="redirectToSignup()">Don't have an account? Sign up here</button>
+        </form>
     </div>
 
     <script>
-        function redirectToLogin() {
-            window.location.href = 'https://login-website.com'; // Redirect back to the login page
+        function redirectToSignup() {
+            window.location.href = 'https://signup-website.com'; // Redirect to the sign up website
         }
     </script>
 </body>
